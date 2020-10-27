@@ -20,23 +20,23 @@ SYSCALL_DEFINE2(sh_task_info, char *, file, int, msg)
   	return PTR_ERR(file1);
   }else{
   	char buf1[20];
-  	sprintf(buf1, %d, pid_task->prio);
+  	sprintf(buf1, "%d", pid_task->prio);
   	kernel_write(file1, buf1, strlen(buf1), &(file1->f_pos));
 
   	char buf2[20];
-  	sprintf(buf2, %d, pid_task->pdeath_signal);
+  	sprintf(buf2, "%d", pid_task->pdeath_signal);
   	kernel_write(file1, buf2, strlen(buf2), &(file1->f_pos));
 
   	char buf3[20];
-  	sprintf(buf3, %d, pid_task->link_count);
+  	sprintf(buf3, "%d", pid_task->link_count);
   	kernel_write(file1, buf3, strlen(buf3), &(file1->f_pos));
 
   	char buf4[20];
-  	sprintf(buf4, %d, pid_task->exit_signal);
+  	sprintf(buf4, "%d", pid_task->exit_signal);
   	kernel_write(file1, buf4, strlen(buf4), &(file1->f_pos));
 
   	char buf5[20];
-  	sprintf(buf5, %d, pid_task->static_prio);
+  	sprintf(buf5, "%d", pid_task->static_prio);
   	kernel_write(file1, buf5, strlen(buf5), &(file1->f_pos));
 
   	filp_close(file1, NULL)
