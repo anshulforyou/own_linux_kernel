@@ -1,0 +1,4 @@
+commands 
+to make diff file - diff -Naur linux-5.9.1/ new-kernel/ > diff.txt
+to clean the disk(maybe) - make mrproper
+to view the content printed by kernel - dmesg | tail
